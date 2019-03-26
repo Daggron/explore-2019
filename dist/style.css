@@ -5463,33 +5463,40 @@ footer{
     transform-style: preserve-3d;
     display: grid;
     align-content: center;
+    height: 450px;
 }
 
 .card__front {
     background-color: var(--clr);
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/fair.jpg);
-    background-size: cover;
-    background-blend-mode: overlay;
-    color: #333;
+   z-index: 1;
+    position: absolute;
+    height: 450px;
 }
 
+.card__front img{
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    z-index: -99;
+}
 .card__front::before {
     content: '';
     position: absolute;
-    --spacer: 1em;
+    --spacer: 0em;
     top: var(--spacer);
     bottom: var(--spacer);
     left: var(--spacer);
     right: var(--spacer);
     border: 3px solid currentColor;
     transform: var(--level-one);
+    z-index: 1;
 }
 
 .card__title {
-    font-size: 50px;
+    font-size: 15px;
     transform: var(--level-three);
-    color: black;
-
+    color: white;
+    margin-top: 10%;
     text-transform: uppercase;
 }
 
@@ -5522,6 +5529,50 @@ footer{
         width: 80%;
         margin-left: 10%;
     }
+
+
+    .card__front,
+    .card__back {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 5em 3em;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        display: grid;
+        align-content: center;
+        height: 400px;
+    }
+
+    .card__front {
+        background-color: var(--clr);
+        z-index: 1;
+        position: absolute;
+        height: 400px;
+    }
+
+    .card__front img{
+        width: 100%;
+        height: 400px;
+        position: absolute;
+        z-index: -99;
+    }
+    .card__front::before {
+        content: '';
+        position: absolute;
+        --spacer: 0em;
+        top: var(--spacer);
+        bottom: var(--spacer);
+        left: var(--spacer);
+        right: var(--spacer);
+        border: 3px solid currentColor;
+        transform: var(--level-one);
+        z-index: 1;
+    }
+
+
 
 
 }
